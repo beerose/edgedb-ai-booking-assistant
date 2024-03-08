@@ -22,4 +22,15 @@ module default {
 
     required link house -> House;
   }
+
+  type History {
+    required property date -> datetime;
+    required property actionRole -> str;
+    required property name -> str;
+    required property content -> str;
+
+    created: datetime {
+      rewrite insert using (datetime_of_statement());
+    }
+  }
 }
