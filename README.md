@@ -1,6 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
+
+### EdgeDB Setup
+
+This project uses [EdgeDB](https://edgedb.com/) as a database. You can install it by following the instructions:
+
+- [Install EdgeDB CLI](https://www.edgedb.com/docs/intro/cli)
+
+After installing the CLI, you can initialize the project by running the following command:
+
+```bash
+edgedb project init
+```
+
+Next, you can apply the schema migrations by running the following command:
+
+```bash
+edgedb migration apply
+```
+
+To seed the database with some initial data, you can run the following command:
+
+```bash
+pnpm seed
+```
+
+### Environment Variables
+
+This project uses OpenAI GPT-4 to generate the responses. You can create an account and get the API key from the [OpenAI website](https://openai.com/). After getting the API key, you can create a `.env.local` file in the root of the project and add the following environment variable:
+
+```bash
+OPENAI_API_KEY=your-api-key
+```
+
+### Development Server
 
 First, run the development server:
 
@@ -18,19 +50,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the stack used in this project, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [EdgeDB Documentation](https://www.edgedb.com/docs/) - learn about EdgeDB features and API.
+- [Vercel AI SDK](https://sdk.vercel.ai/docs)
