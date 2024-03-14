@@ -23,6 +23,12 @@ module default {
     required link house -> House;
   }
 
+  type Booking {
+    required link house -> House;
+    required property from_date -> datetime;
+    required property to_date -> datetime;
+  }
+
   type History {
     required property date -> datetime;
     required property actionRole -> str;
