@@ -30,7 +30,7 @@ export default function HouseCard({
   return (
     <div
       key={house.id}
-      className="col-span-1 h-[700px] w-full flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-sm overflow-scroll"
+      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-sm overflow-scroll"
     >
       <div className="flex-1 flex flex-col p-8 relative">
         <img

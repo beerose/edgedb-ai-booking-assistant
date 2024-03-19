@@ -1,4 +1,5 @@
 import { ComputerDesktopIcon, UserIcon } from '@heroicons/react/16/solid'
+import Markdown from 'react-markdown'
 
 export function Message({
   type,
@@ -16,7 +17,11 @@ export function Message({
           <UserIcon className="h-6 w-6" />
         )}
       </div>
-      {children}
+      {typeof children === 'string' ? (
+        <Markdown>{children}</Markdown>
+      ) : (
+        children
+      )}
     </div>
   )
 }
