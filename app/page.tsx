@@ -128,13 +128,13 @@ export default function Page() {
                 },
               ])
 
+              setInputValue('')
+
               const responseMessage = await submitUserMessage(inputValue)
               setMessages((currentMessages) => [
                 ...currentMessages,
                 responseMessage,
               ])
-
-              setInputValue('')
             }}
           >
             <UserInput
