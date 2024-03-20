@@ -9,8 +9,6 @@ import { Spinner } from '@/components/Spinner'
 import HouseDetails from '@/components/HouseDetails'
 import { houseProperties, propertiesSchema } from '@/src/types'
 
-export const runtime = 'edge'
-
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_AI_KEY,
 })
