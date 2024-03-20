@@ -1,4 +1,20 @@
+# AI Booking Assistant with EdgeDB and Vercel AI SDK
+
 ## Getting Started
+
+### Clone the Repository
+
+You can clone the repository by running the following command:
+
+```bash
+git clone https://github.com/beerose/edgedb-ai-booking-assistant.git
+```
+
+After cloning the repository, you can navigate to the project directory:
+
+```bash
+cd edgedb-ai-booking-assistant
+```
 
 ### EdgeDB Setup
 
@@ -18,6 +34,18 @@ Next, you can apply the schema migrations by running the following command:
 edgedb migration apply
 ```
 
+### Install Dependencies
+
+This project uses [pnpm](https://pnpm.io/) as a package manager, but you can use `npm` or `yarn` if you prefer.
+
+You can install the dependencies by running the following command:
+
+```bash
+pnpm install
+```
+
+### Seed the Database
+
 To seed the database with some initial data, you can run the following command:
 
 ```bash
@@ -32,18 +60,24 @@ This project uses OpenAI GPT-4 to generate the responses. You can create an acco
 OPENAI_API_KEY=your-api-key
 ```
 
+### Generate the Types
+
+To generate the types for the EdgeDB schema, you can run the following command:
+
+```bash
+pnpm generate:all
+```
+
+It runs `npx @edgedb/generate interfaces` and `npx @edgedb/generate edgeql-js` to generate the types. You can also run these commands separately if you want.
+
+You will find the generated types in the `dbschema` directory.
+
 ### Development Server
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
