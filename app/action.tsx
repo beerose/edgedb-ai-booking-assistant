@@ -1,7 +1,7 @@
 import { OpenAI } from 'openai'
 import { createAI, createStreamableUI, getMutableAIState, render } from 'ai/rsc'
 import { z } from 'zod'
-import { createHttpClient } from 'edgedb'
+import { createClient } from 'edgedb'
 import e from '@/dbschema/edgeql-js'
 import { Message } from '@/components/Message'
 import { Houses } from '@/components/Houses'
@@ -13,7 +13,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_AI_KEY,
 })
 
-const client = createHttpClient()
+const client = createClient()
 
 async function getHouseInfo(houseId: string) {
   const houseQuery = e.select(e.House, () => ({
