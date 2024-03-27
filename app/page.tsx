@@ -24,7 +24,7 @@ export default function Page() {
         </div>
       ))}
 
-      <Message type="bot" className="m-4">
+      <Message type="bot" className="mb-4">
       <div className="p-4">
         <h1 className="text-xl font-semibold text-gray-900">
           Ask me about available dates, pricing, or anything else you need to know.
@@ -57,7 +57,7 @@ export default function Page() {
               ])
             }}
           >
-            What houses are available for rent?
+            — What houses are available for rent?
           </button>
           <button
             className="text-blue-600 hover:text-blue-800  text-left"
@@ -83,7 +83,7 @@ export default function Page() {
               ])
             }}
           >
-            What are the prices for the houses?
+            — What are the prices for the houses?
           </button>
           <button
             className="text-blue-600 hover:text-blue-800 text-left"
@@ -109,7 +109,7 @@ export default function Page() {
               ])
             }}
           >
-            What houses are available? Display top 5 houses
+            — What houses are available? Display top 5 houses
           </button>
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function Page() {
 
       </div>
 
-      <div className="flex mt-auto w-full md:p-12 sm:p-8 p-4 bg-neutral-400">
+      <div className="flex mt-auto w-full md:p-12 sm:p-8 p-4 bg-zinc-400">
         <div className="mx-auto max-w-4xl h-full w-full self-end">
 
           <form

@@ -20,12 +20,12 @@ export function Message({
     }>
       <div className="bg-white rounded-full p-2 self-end">
         {type === 'bot' ? (
-          <ComputerDesktopIcon className="h-6 w-6 text-amber-600" />
+          <ComputerDesktopIcon className="h-6 w-6 text-zinc-500" />
         ) : (
-          <UserIcon className="h-6 w-6 text-sky-600" />
+          <UserIcon className="h-6 w-6 text-blue-600" />
         )}
       </div>
-      <div className="bg-neutral-200 flex-1 p-2 rounded-lg">
+      <div className="bg-zinc-200 flex-1 p-2 rounded-lg">
         {typeof children === 'string' ? (
           <Markdown>{children}</Markdown>
         ) : (
@@ -34,7 +34,7 @@ export function Message({
           </div>
         )}
       </div>
-      <div className="h-10 w-20"></div>
+      <div className="h-10 md:w-20"></div>
     </div>
   )
 }
