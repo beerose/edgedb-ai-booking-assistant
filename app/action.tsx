@@ -213,7 +213,11 @@ If you can't find an appropriate function, tell the user to ask a different ques
           ])
 
           if (!house) {
-            return <Message type="bot"><p>House not found</p></Message>
+            return (
+              <Message type="bot">
+                <p>House not found</p>
+              </Message>
+            )
           }
           return (
             <Message type="bot">
@@ -245,7 +249,11 @@ If you can't find an appropriate function, tell the user to ask a different ques
           ])
 
           if (!house) {
-            return <Message type="bot"><p>House not found</p></Message>
+            return (
+              <Message type="bot">
+                <p>House not found</p>
+              </Message>
+            )
           }
           return (
             <Message type="bot">
