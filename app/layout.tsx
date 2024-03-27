@@ -19,7 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="bg-gray-100"
+      className="bg-zinc-100"
     >
       <body className={inter.className}>
         <AI>{children}</AI>

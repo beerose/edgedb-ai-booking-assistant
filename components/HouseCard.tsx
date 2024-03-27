@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { House } from '@/dbschema/interfaces'
 import { Properties } from '@/src/types'
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { MapPinIcon } from '@heroicons/react/20/solid'
 
 type Props = {
   house: Omit<House, 'reviews'>
@@ -30,7 +30,7 @@ export default function HouseCard({
   return (
     <div
       key={house.id}
-      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded bg-white shadow-sm overflow-hidden"
+      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded bg-white shadow-sm overflow-hidden flex-wrap"
     >
       <div className="flex-1 flex flex-col gap-4 relative pb-4">
         <div
@@ -39,8 +39,9 @@ export default function HouseCard({
             backgroundImage: `
               linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.4) 100%),
               url(${house.photos[0]})
-            `
-          }}>
+            `,
+          }}
+        >
           <div className="flex mt-auto mx-3 mb-3">
             {properties.includes('title') && (
               <h3 className="p-1 text-slate-50 text-sm font-medium text-left">

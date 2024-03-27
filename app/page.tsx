@@ -117,7 +117,7 @@ export default function Page() {
 
       </div>
 
-      <div className="flex mt-auto w-full md:p-12 sm:p-8 p-4 bg-zinc-400">
+      <div className="flex mt-auto w-full md:p-12 sm:p-8 p-4 bg-zinc-300">
         <div className="mx-auto max-w-4xl h-full w-full self-end">
 
           <form
