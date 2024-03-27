@@ -25,7 +25,7 @@ export function Message({
           <UserIcon className="h-6 w-6 text-blue-600" />
         )}
       </div>
-      <div className="bg-zinc-200 flex-1 p-2 rounded-lg">
+      <div className="bg-zinc-200 flex-1 p-4 rounded-lg">
         {typeof children === 'string' ? (
           <Markdown>{children}</Markdown>
         ) : (
