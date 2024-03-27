@@ -12,16 +12,24 @@ export default function Page() {
   const { submitUserMessage } = useActions<typeof AI>()
 
   return (
-    <main className="bg-gray-100 flex flex-col md:p-12 sm:p-8 p-4 min-h-full relative items-center">
-      <div className="bg-white p-10 rounded shadow-sm w-full mx-auto max-w-4xl sm:px-6 lg:px-8 mb-4">
-        <h1 className="text-4xl font-semibold text-gray-900">
-          Welcome to the booking assistant
+    <main className="bg-gray-100 flex flex-col min-h-full max-h-full h-full relative items-center">
+      <div className="flex flex-1 w-full overflow-scroll md:p-12 sm:p-8 p-4 flex-col-reverse">
+
+      {messages.toReversed().map((message) => (
+        <div
+          className="flex flex-col w-full mb-4"
+          key={message.id}
+        >
+          <div className="text-gray-600">{message.display}</div>
+        </div>
+      ))}
+
+      <Message type="bot" className="m-4">
+      <div className="p-4">
+        <h1 className="text-xl font-semibold text-gray-900">
+          Ask me about available dates, pricing, or anything else you need to know.
         </h1>
         <p className="text-gray-600 mt-2">
-          Ask me about available dates, pricing, or anything else you need to
-          know.
-        </p>
-        <p className="text-gray-600 mt-6">
           Here are some example questions you can ask:
         </p>
         <div className="text-gray-600 mt-2 cursor-pointer hover:text-gray-900 flex flex-col items-start gap-y-1">
@@ -105,16 +113,12 @@ export default function Page() {
           </button>
         </div>
       </div>
-      <div className="bg-gray-100 flex mt-auto w-full">
+      </Message>
+
+      </div>
+
+      <div className="flex mt-auto w-full md:p-12 sm:p-8 p-4 bg-neutral-400">
         <div className="mx-auto max-w-4xl h-full w-full self-end">
-          {messages.map((message) => (
-            <div
-              className="flex flex-col w-full mb-4"
-              key={message.id}
-            >
-              <div className="text-gray-600">{message.display}</div>
-            </div>
-          ))}
 
           <form
             onSubmit={async (e) => {
