@@ -27,7 +27,7 @@ export default function Page() {
 
       <Message type="bot" className="mb-4">
       <div className="p-4">
-        <h1 className="text-xl font-semibold text-gray-900">
+        <h1 className="text-xl font-semibold text-gray-800">
           Ask me about available dates, pricing, or anything else you need to know.
         </h1>
         <p className="text-gray-600 mt-2">
