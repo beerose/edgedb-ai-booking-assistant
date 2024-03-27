@@ -5,6 +5,7 @@ import { useUIState, useActions } from 'ai/rsc'
 import type { AI } from './action'
 import UserInput from '@/components/UserInput'
 import { Message } from '@/components/Message'
+import {EdgeDB_Vercel} from "@/components/Logo"
 
 export default function Page() {
   const [inputValue, setInputValue] = useState('')
@@ -114,6 +115,8 @@ export default function Page() {
         </div>
       </div>
       </Message>
+
+      <div className="flex flex-1 justify-center m-6 text-sky-50"><EdgeDB_Vercel/></div>
 
       </div>
 
