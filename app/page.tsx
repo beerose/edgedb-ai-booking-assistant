@@ -116,7 +116,15 @@ export default function Page() {
       </div>
       </Message>
 
-      <div className="flex flex-1 justify-center m-6 text-sky-50"><EdgeDB_Vercel/></div>
+      <div className="flex flex-1 justify-center m-6">
+        <div className="flex flex-col items-center">
+          <EdgeDB_Vercel/>
+          <p className="text-zinc-400 text-sm text-center mt-4 max-w-md">
+            This demo app is backed by EdgeDB, Next.js, and Vercel&nbsp;AI&nbsp;SDK.
+            Runs on Vercel and EdgeDB&nbsp;Cloud.
+          </p>
+        </div>
+      </div>
 
       </div>
 
