@@ -116,7 +116,7 @@ export default function Page() {
       </div>
       </Message>
 
-      <div className="flex flex-1 justify-center m-6">
+      <div className="flex flex-1 justify-center m-6 mb-12">
         <div className="flex flex-col items-center">
           <EdgeDB_Vercel/>
           <p className="text-zinc-400 text-xs text-center mt-3 max-w-md">
