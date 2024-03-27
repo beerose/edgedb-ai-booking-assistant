@@ -213,13 +213,15 @@ If you can't find an appropriate function, tell the user to ask a different ques
           ])
 
           if (!house) {
-            return <p>House not found</p>
+            return <Message type="bot"><p>House not found</p></Message>
           }
           return (
-            <Houses
-              houses={house}
-              properties={propertiesToSelect}
-            />
+            <Message type="bot">
+              <Houses
+                houses={house}
+                properties={propertiesToSelect}
+              />
+            </Message>
           )
         },
       },
@@ -243,13 +245,15 @@ If you can't find an appropriate function, tell the user to ask a different ques
           ])
 
           if (!house) {
-            return <p>House not found</p>
+            return <Message type="bot"><p>House not found</p></Message>
           }
           return (
-            <HouseDetails
-              house={house}
-              reviews={house.reviews}
-            />
+            <Message type="bot">
+              <HouseDetails
+                house={house}
+                reviews={house.reviews}
+              />
+            </Message>
           )
         },
       },

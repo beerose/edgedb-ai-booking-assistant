@@ -19,7 +19,7 @@ export default function UserInput({
             <input
               name="comment"
               id="comment"
-              className="h-16 block w-full resize-none border-0 bg-transparent p-3 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 bg-white outline-none"
+              className="block w-full resize-none border-0 bg-transparent p-3 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 bg-white outline-none"
               placeholder="Ask a question..."
               onChange={(e) => {
                 onChange(e.target.value)
