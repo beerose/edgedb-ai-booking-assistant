@@ -122,6 +122,8 @@ export default function Page() {
           <p className="text-zinc-400 text-xs text-center mt-3 max-w-md">
             This demo app is backed by EdgeDB, Next.js, and Vercel&nbsp;AI&nbsp;SDK.
             Runs on Vercel and EdgeDB&nbsp;Cloud.
+            Read <a className="underline" href="https://www.edgedb.com/blog/generative-ui-with-vercel-ai-sdk-and-edgedb">the blog post</a> for
+            more details.
           </p>
         </div>
       </div>
