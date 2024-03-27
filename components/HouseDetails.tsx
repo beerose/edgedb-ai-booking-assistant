@@ -3,12 +3,7 @@
 
 import { AI } from '@/app/action'
 import { House, Review } from '@/dbschema/interfaces'
-import {
-  ArrowLeftIcon,
-  EnvelopeIcon,
-  HeartIcon,
-  PhoneIcon,
-} from '@heroicons/react/20/solid'
+import { ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { useActions, useUIState } from 'ai/rsc'
 import { useState } from 'react'
 
@@ -37,14 +32,14 @@ export default function HouseDetails({ house, reviews, onClose }: Props) {
       className="col-span-1 flex relative flex-col rounded bg-white text-center shadow-sm overflow-hidden"
     >
       <div
-          className="h-96 max-h-96 w-full bg-cover bg-center flex flex-col"
-          style={{
-            backgroundImage: `
+        className="h-96 max-h-96 w-full bg-cover bg-center flex flex-col"
+        style={{
+          backgroundImage: `
               linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.4) 100%),
               url(${house.photos[0]})
-            `
-          }}>
-
+            `,
+        }}
+      >
         <div className="flex">
           {onClose && (
             <button
@@ -71,8 +66,17 @@ export default function HouseDetails({ house, reviews, onClose }: Props) {
       <div className="flex-1 flex flex-col p-8 relative">
         <div className="mt-2 flex-grow flex flex-col text-left text-ellipsis">
           <span className="text-gray-500 text-sm">
-            {readMore ? house.description : (house.description.substring(0, 100) + '... ')}
-            {readMore ? null : <button className="text-blue-600 text-sm" onClick={() => setReadMore(true)}>Read more</button>}
+            {readMore
+              ? house.description
+              : house.description.substring(0, 100) + '... '}
+            {readMore ? null : (
+              <button
+                className="text-blue-600 text-sm"
+                onClick={() => setReadMore(true)}
+              >
+                Read more
+              </button>
+            )}
           </span>
         </div>
 
@@ -106,58 +110,60 @@ export default function HouseDetails({ house, reviews, onClose }: Props) {
       </div>
 
       <div className="bg-gray-50 p-8">
-          <div className="flex-1 flex">
-            <div className="flex items-center justify-center text-xs gap-2">
-              <input
-                type="date"
-                className="border-2 border-gray-300 rounded-md p-2"
-                onChange={(e) =>
-                  setBookingDates({
-                    ...bookingDates,
-                    startDate: e.target.value,
-                  })
-                }
-              />
-              <input
-                type="date"
-                className="border-2 border-gray-300 rounded-md p-2"
-                onChange={(e) =>
-                  setBookingDates({
-                    ...bookingDates,
-                    endDate: e.target.value,
-                  })
-                }
-              />
+        <div className="flex-1 flex">
+          <div className="flex flex-col sm:flex-row items-center text-xs gap-2 flex-wrap">
+            <input
+              type="date"
+              className="border-2 border-gray-300 rounded-md p-2"
+              onChange={(e) =>
+                setBookingDates({
+                  ...bookingDates,
+                  startDate: e.target.value,
+                })
+              }
+            />
+            <input
+              type="date"
+              className="border-2 border-gray-300 rounded-md p-2"
+              onChange={(e) =>
+                setBookingDates({
+                  ...bookingDates,
+                  endDate: e.target.value,
+                })
+              }
+            />
 
-              <button
-                onClick={async () => {
-                  if (!bookingDates.startDate || !bookingDates.endDate) {
-                    return
-                  }
-                  const response = await confirmBooking(
-                    new Date(bookingDates.startDate),
-                    new Date(bookingDates.endDate),
-                    house.id,
-                    house.title
-                  )
-                  setBookingUI(response.ui)
+            <button
+              onClick={async () => {
+                if (!bookingDates.startDate || !bookingDates.endDate) {
+                  return
+                }
+                const response = await confirmBooking(
+                  new Date(bookingDates.startDate),
+                  new Date(bookingDates.endDate),
+                  house.id,
+                  house.title
+                )
+                setBookingUI(response.ui)
 
-                  setMessages((currentMessages) => [
-                    ...currentMessages,
-                    response.newMessage,
-                  ])
-                }}
-                className="p-2 bg-blue-600 rounded-md text-white"
-              >
-                <span className="text-sm font-semibold">Book now</span>
-              </button>
-            </div>
+                setMessages((currentMessages) => [
+                  ...currentMessages,
+                  response.newMessage,
+                ])
+              }}
+              className="p-2 bg-blue-600 rounded-md text-white self-start"
+            >
+              <span className="text-sm font-semibold">Book now</span>
+            </button>
           </div>
-
-          {bookingUI && (
-            <div className="mt-4 flex-1 flex text-left font-bold">{bookingUI}</div>
-          )}
         </div>
+
+        {bookingUI && (
+          <div className="mt-4 flex-1 flex text-left font-bold">
+            {bookingUI}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
