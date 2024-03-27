@@ -30,11 +30,11 @@ export default function HouseCard({
   return (
     <div
       key={house.id}
-      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded-lg bg-white shadow-sm overflow-scroll"
+      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded-lg bg-white shadow-sm overflow-hidden"
     >
       <div className="flex-1 flex flex-col gap-4 relative pb-4">
         <div
-          className="h-48 max-h-48 w-full justify-stretch bg-cover bg-center flex flex-col"
+          className="h-48 max-h-48 w-full bg-cover bg-center flex flex-col"
           style={{
             backgroundImage: `
               linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.4) 100%),
@@ -93,21 +93,21 @@ export default function HouseCard({
           )}
         </div>
 
-        <div className="mx-4 text-left flex-grow flex flex-col justify-between text-ellipsis">
-          {properties.includes('description') && (
+        {properties.includes('description') && (
+          <div className="mx-4 text-left flex-grow flex flex-col justify-between text-ellipsis">
             <span className="text-gray-500 text-sm">
               {house.description.substring(0, 150)}...
             </span>
-          )}
-        </div>
+          </div>
+        )}
 
-        <div className="mx-4">
-          {properties.includes('amenities') && (
+        {properties.includes('amenities') && (
+          <div className="mx-4">
             <div className="flex items-center text-left flex-wrap text-gray-500 text-sm italic">
               {house.amenities.slice(0, 5).join(', ')}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   )
