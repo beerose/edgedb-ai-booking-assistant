@@ -1,39 +1,39 @@
 module default {
   type House {
-    required property title -> str;
-    required property description -> str;
-    required property location -> str;
-    required property price_per_night -> float64;
-    required property max_guests -> int16;
-    required property no_of_rooms -> int16;
-    required property no_of_beds -> int16;
-    required property rating -> float64;
-    required property amenities -> array<str>;
-    required property photos -> array<str>;
+    required title: str;
+    required description: str;
+    required location: str;
+    required price_per_night: float64;
+    required max_guests: int16;
+    required no_of_rooms: int16;
+    required no_of_beds: int16;
+    required rating: float64;
+    required amenities: array<str>;
+    required photos: array<str>;
 
-    required property no_of_reviews := count(.reviews);
-    multi link reviews -> Review;
+    required no_of_reviews := count(.reviews);
+    multi link reviews: Review;
   }
 
   type Review {
-    required property reviewer_name -> str;
-    required property rating -> float64;
-    required property comment -> str;
+    required reviewer_name: str;
+    required rating: float64;
+    required comment: str;
 
-    required link house -> House;
+    required link house: House;
   }
 
   type Booking {
-    required link house -> House;
-    required property from_date -> datetime;
-    required property to_date -> datetime;
+    required link house: House;
+    required from_date: datetime;
+    required to_date: datetime;
   }
 
   type History {
-    required property date -> datetime;
-    required property actionRole -> str;
-    required property name -> str;
-    required property content -> str;
+    required date: datetime;
+    required actionRole: str;
+    required name: str;
+    required content: str;
 
     created: datetime {
       rewrite insert using (datetime_of_statement());
