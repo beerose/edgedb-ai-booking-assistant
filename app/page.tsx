@@ -5,6 +5,7 @@ import { useUIState, useActions } from 'ai/rsc'
 import type { AI } from './action'
 import UserInput from '@/components/UserInput'
 import { Message } from '@/components/Message'
+import {EdgeDB_Vercel} from "@/components/Logo"
 
 export default function Page() {
   const [inputValue, setInputValue] = useState('')
@@ -26,7 +27,7 @@ export default function Page() {
 
       <Message type="bot" className="mb-4">
       <div className="p-4">
-        <h1 className="text-xl font-semibold text-gray-900">
+        <h1 className="text-xl font-semibold text-gray-800">
           Ask me about available dates, pricing, or anything else you need to know.
         </h1>
         <p className="text-gray-600 mt-2">
@@ -114,6 +115,16 @@ export default function Page() {
         </div>
       </div>
       </Message>
+
+      <div className="flex flex-1 justify-center m-6 mb-16">
+        <div className="flex flex-col items-center">
+          <EdgeDB_Vercel/>
+          <p className="text-zinc-400 text-xs text-center mt-3 max-w-md">
+            This demo app is backed by EdgeDB, Next.js, and Vercel&nbsp;AI&nbsp;SDK.
+            Runs on Vercel and EdgeDB&nbsp;Cloud.
+          </p>
+        </div>
+      </div>
 
       </div>
 
