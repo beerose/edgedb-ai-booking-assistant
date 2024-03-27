@@ -23,16 +23,6 @@ export default function HouseListItem({ house }: Props) {
           </span>
           <span className="ml-1 text-gray-500 text-sm">/ night</span>
         </div>
-        <div className="flex space-x-3">
-          <PhoneIcon
-            className="h-5 w-5 text-gray-400"
-            aria-hidden="true"
-          />
-          <EnvelopeIcon
-            className="h-5 w-5 text-gray-400"
-            aria-hidden="true"
-          />
-        </div>
       </div>
     </div>
   )

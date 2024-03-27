@@ -30,7 +30,7 @@ export default function HouseCard({
   return (
     <div
       key={house.id}
-      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded-lg bg-white shadow-sm overflow-hidden"
+      className="col-span-1 w-full flex flex-col divide-y divide-gray-200 rounded bg-white shadow-sm overflow-hidden"
     >
       <div className="flex-1 flex flex-col gap-4 relative pb-4">
         <div
@@ -60,11 +60,13 @@ export default function HouseCard({
               className="h-5 w-5 text-grey-50 self-center mr-1"
               aria-hidden="true"
             />
-            <div className="text-grey-50 text-sm self-center">{house.location}</div>
+            <div className="text-grey-50 text-sm self-center text-left">
+              {house.location}
+            </div>
           </div>
         )}
 
-        <div className="mx-4 flex items-center gap-4">
+        <div className="mx-4 flex items-center gap-4 flex-wrap">
           {properties.includes('max_guests') && (
             <div>
               <span className="text-gray-900 text-sm font-medium">

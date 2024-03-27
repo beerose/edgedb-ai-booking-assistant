@@ -34,7 +34,7 @@ export default function HouseDetails({ house, reviews, onClose }: Props) {
   return (
     <div
       key={house.id}
-      className="col-span-1 flex relative flex-col rounded-lg bg-white text-center shadow-sm overflow-hidden"
+      className="col-span-1 flex relative flex-col rounded bg-white text-center shadow-sm overflow-hidden"
     >
       <div
           className="h-96 max-h-96 w-full bg-cover bg-center flex flex-col"

@@ -12,7 +12,7 @@ export default function Page() {
   const { submitUserMessage } = useActions<typeof AI>()
 
   return (
-    <main className="bg-gray-100 flex flex-col p-12 min-h-full relative items-center">
+    <main className="bg-gray-100 flex flex-col md:p-12 sm:p-8 p-4 min-h-full relative items-center">
       <div className="bg-white p-10 rounded shadow-sm w-full mx-auto max-w-4xl sm:px-6 lg:px-8 mb-4">
         <h1 className="text-4xl font-semibold text-gray-900">
           Welcome to the booking assistant
@@ -26,7 +26,7 @@ export default function Page() {
         </p>
         <div className="text-gray-600 mt-2 cursor-pointer hover:text-gray-900 flex flex-col items-start gap-y-1">
           <button
-            className="text-blue-600 hover:text-blue-800"
+            className="text-blue-600 hover:text-blue-800 text-left"
             onClick={async () => {
               setMessages((currentMessages) => [
                 ...currentMessages,
@@ -52,7 +52,7 @@ export default function Page() {
             What houses are available for rent?
           </button>
           <button
-            className="text-blue-600 hover:text-blue-800"
+            className="text-blue-600 hover:text-blue-800  text-left"
             onClick={async () => {
               setMessages((currentMessages) => [
                 ...currentMessages,
@@ -78,7 +78,7 @@ export default function Page() {
             What are the prices for the houses?
           </button>
           <button
-            className="text-blue-600 hover:text-blue-800"
+            className="text-blue-600 hover:text-blue-800 text-left"
             onClick={async () => {
               setMessages((currentMessages) => [
                 ...currentMessages,
