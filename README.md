@@ -88,6 +88,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 To learn more about the stack used in this project, take a look at the following resources:
 
+- [Blog post](https://www.edgedb.com/blog/generative-ui-with-vercel-ai-sdk-and-edgedb) — learn more about building GenUI apps with EdgeDB and Vercel in my blog post.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [EdgeDB Documentation](https://www.edgedb.com/docs/) - learn about EdgeDB features and API.
 - [Vercel AI SDK](https://sdk.vercel.ai/docs)
